@@ -1,6 +1,4 @@
 # uvicorn server:app --port=8111 --reload --log-level debug
-print("hello web")
-
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -14,5 +12,10 @@ templates = Jinja2Templates(directory="templates")
 
 
 @app.get("/", response_class=HTMLResponse)
-async def root(request: Request):
-    return templates.TemplateResponse(request=request, name="main.html")
+async def read_root(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
+
+
+@app.get("/load_content", response_class=HTMLResponse)
+async def load_content(request: Request):
+    return templates.TemplateResponse("partial.html", {"request": request})
