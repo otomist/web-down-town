@@ -1,6 +1,14 @@
-# flyctl launch added from .gitignore
-# ignore python venv:
-**\venv
-# ignore python cache:
-**\__pycache__
+# Ignore Python virtual environment
+venv/
+  
+# Ignore Python cache directories and files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore Git directories and files
+.git/
+
+# Ignore Fly.io configuration file if you don't need it in the Docker image
 fly.toml
