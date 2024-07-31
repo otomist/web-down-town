@@ -1,2 +1,4 @@
 # ignore python venv:
 venv/
+# ignore python cache:
+__pycache__/
