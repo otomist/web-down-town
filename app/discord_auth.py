@@ -1,6 +1,9 @@
 import os
 import requests
 from dotenv import load_dotenv
+from fastapi import APIRouter
+
+router = APIRouter()
 
 load_dotenv()
 
@@ -29,3 +32,8 @@ def exchange_code(code):
     )
     r.raise_for_status()
     return r.json()
+
+
+@router.get("/discord/", tags=["discord"])
+async def read_item():
+    return {"message": "Hello World"}
