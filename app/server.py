@@ -1,4 +1,4 @@
-# uvicorn server:app --port=8111 --reload --log-level debug
+# uvicorn server:app --port=8000 --reload --log-level debug
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
