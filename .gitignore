@@ -3,3 +3,4 @@ venv/
 # ignore python cache:
 __pycache__/
 fly.toml
+.env
